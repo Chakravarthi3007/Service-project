@@ -1,0 +1,30 @@
+.one {
+  color: brown;
+  font-style: italic;
+  background-color: yellow;
+  margin-right: 20px;
+  margin-left: 20px;
+  min-height: 100vh;
+}
+
+.two {
+  color: blue;
+  font-style: oblique;
+  background-color: black
+}
+
+.three {
+  color: yellow;
+  font-style: normal;
+  background-color: red;
+  margin-left: 20px;
+  margin-right: 20px;
+
+}
+
+
+
+.head {
+  font-style: italic;
+  color: orange;
+}
