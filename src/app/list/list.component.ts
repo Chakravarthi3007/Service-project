@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
 
 import { DataService } from '../Services/data.service';
 
@@ -12,7 +14,9 @@ export class ListComponent implements OnInit {
 
   countryList: any[];
 
-  constructor(private _dataService: DataService) { }
+  constructor(private _dataService: DataService,
+    private _router: Router) { }
+
 
   ngOnInit(): void {
     this._dataService.getCountryNames().subscribe((res) => {
@@ -37,8 +41,12 @@ export class ListComponent implements OnInit {
   toggle = false;
 
   onClick(event) {
+    // this._router.navigate(['/list']);
     console.log(event);
     this.toggle = !this.toggle;
   }
-
+  onRowClick(item) {
+    console.log(item);
+    this._router.navigate(['/more'], { queryParams: item });
+  }
 }

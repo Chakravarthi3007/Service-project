@@ -7,7 +7,8 @@
      <div class="col">
        <ul class="list-group">
          <li *ngFor="let item of countryList | slice:0:99"
-           class="list-group-item list-group-item-action list-group-item-dark">{{item.name}}</li>
+           class="list-group-item list-group-item-action list-group-item-dark" (click)="onRowClick(item)">{{item.name}}
+         </li>
        </ul>
      </div>
 
