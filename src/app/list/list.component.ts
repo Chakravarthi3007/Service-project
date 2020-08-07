@@ -41,7 +41,7 @@ export class ListComponent implements OnInit {
   toggle = false;
 
   onClick(event) {
-    // this._router.navigate(['/list']);
+    this._router.navigate(['/list']);
     console.log(event);
     this.toggle = !this.toggle;
   }

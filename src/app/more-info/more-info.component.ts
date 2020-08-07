@@ -10,14 +10,15 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class MoreInfoComponent implements OnInit {
 
-  item = {};
+  item;
 
   constructor(private _route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this._route.queryParams.subscribe((params) => {
       console.log(params);
-      this.item = params;
+      this.item = (params);
+      console.log(this.item);
     });
   }
 }
