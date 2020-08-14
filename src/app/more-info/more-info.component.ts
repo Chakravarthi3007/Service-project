@@ -10,7 +10,9 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class MoreInfoComponent implements OnInit {
 
-  item;
+  // item = { name: "", code: "" };
+  item = {};
+  showOnData = false;
 
   constructor(private _route: ActivatedRoute) { }
 
@@ -18,6 +20,7 @@ export class MoreInfoComponent implements OnInit {
     this._route.queryParams.subscribe((params) => {
       console.log(params);
       this.item = (params);
+      this.showOnData = true;
       console.log(this.item);
     });
   }

@@ -1,0 +1,29 @@
+<div class=" row card container-fluid text-center ">
+  <div class="col card-header header bg-success">
+    <h5>Inventory Section</h5>
+  </div>
+  <br>
+  <table class="table table-dark">
+    <thead>
+      <tr>
+        <th scope="col">Customer Name</th>
+        <th scope="col">Phone Number</th>
+        <th scope="col">Order Date</th>
+        <th scope="col">Delivery Date</th>
+        <th scope="col">Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of billArray">
+        <td>{{ item.customerName }}</td>
+        <td>{{item.phoneNumber}}</td>
+        <td>{{item.orderDate | date}}</td>
+        <td>{{item.deliveryDate | date}}</td>
+        <td>{{item.status}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="card-footer text-muted text-center ">
+    InvManagement &copy; 2020
+  </div>
+</div>
