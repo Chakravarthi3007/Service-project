@@ -1,4 +1,16 @@
 .header {
-  color: black;
+  color: white;
+  background-color: #12456d;
   font-style: oblique;
+
+}
+
+.footer {
+  color: #12456d;
+  position: absolute;
+  bottom: 0;
+  width: 90%;
+  line-height: 35px;
+  height: 60px;
+  padding-top: 60px;
 }

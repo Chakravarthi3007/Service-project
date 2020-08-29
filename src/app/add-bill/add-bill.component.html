@@ -1,29 +1,33 @@
+ <div class=" row card container-fluid text-center ">
+   <div class="col card-header header ">
+     <h3>Inventory Section </h3>
+   </div>
+ </div>
  <br>
  <div class="alert alert-danger" role="alert" *ngIf="error.length > 0">
    <h1>{{error}}</h1>
  </div>
-
  <form (ngSubmit)="onFormSubmit(addBillForm)" #addBillForm="ngForm">
 
    <div class="row">
      <div class="col-2">
-       <label for="CustomerName">Customer Name</label><br>
-       <input type="text" name="customerName" #customerName [ngModel]="bill.CustomerName" required><br>
+       <label for="customerName">Customer Name</label><br>
+       <input type="text" name="customerName" #customerName [ngModel]="bill.customerName" required><br>
      </div>
      <div class="col">
-       <label for="PhoneNumber">Phone Number</label><br>
-       <input type="number" name="phoneNumber" #phoneNumber [ngModel]="bill.PhoneNumber" required><br>
+       <label for="phoneNumber">Phone Number</label><br>
+       <input type="number" name="phoneNumber" #phoneNumber [ngModel]="bill.phoneNumber" required><br>
      </div>
    </div>
    <br>
    <div class="row">
      <div class="col-2">
        <label for="orderDate">Order Date</label><br>
-       <input type="date" name="orderDate" #orderDate [ngModel]="bill.OrderDate" required><br>
+       <input type="date" name="orderDate" #orderDate [ngModel]="bill.orderDate" required><br>
      </div>
      <div class="col">
        <label for="deliveryDate">Delivery Date</label><br>
-       <input type="date" name="deliveryDate" #deliveryDate [ngModel]="bill.DeliveryDate" required><br>
+       <input type="date" name="deliveryDate" #deliveryDate [ngModel]="bill.deliveryDate" required><br>
      </div>
    </div>
    <br>
@@ -51,3 +55,11 @@
      </div>
    </div>
  </form>
+
+ <footer class="footer">
+   <div class="row container">
+     <div class="col text-center">
+       InvManagement &copy; 2020
+     </div>
+   </div>
+ </footer>

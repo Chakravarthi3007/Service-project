@@ -1,0 +1,15 @@
+.footer {
+  position: absolute;
+  color: #12456d;
+  bottom: 0;
+  width: 90%;
+  line-height: 60px;
+  height: 60px;
+}
+
+.header {
+  color: white;
+  background-color: #12456d;
+  font-style: oblique;
+
+}

@@ -16,11 +16,11 @@ export class AddBillComponent implements OnInit {
   error = '';
 
   bill: BillType = {
-    CustomerName: '',
-    PhoneNumber: null,
-    OrderDate: '',
-    DeliveryDate: '',
-    Status: '',
+    customerName: '',
+    phoneNumber: null,
+    orderDate: '',
+    deliveryDate: '',
+    status: '',
   };
 
   // In order to call that service function we need to intationate

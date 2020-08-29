@@ -3,11 +3,13 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BillType } from '../modals/bill.modal';
 import { observable } from 'rxjs';
+import { UserModel } from '../modals/user.models';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
+  [x: string]: any;
 
   constructor(private _http: HttpClient) { }
   getCountryNames() {
@@ -24,4 +26,8 @@ export class DataService {
     return this._http.post('https://ufixibreak.herokuapp.com/bill/add', bill);
 
   }
+
+  // login(user: UserModel) {
+  //   return this._http.get('https://ufixibreak.herokuapp.com/bill/all');
+  // }
 }
