@@ -1,7 +1,9 @@
 import { Component, OnInit, Query } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { faCoffee, faSignInAlt } from '@fortawesome/free-solid-svg-icons';
+import { faSignInAlt } from '@fortawesome/free-solid-svg-icons';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
+
 
 import { DataService } from '../Services/data.service';
 import { BillType } from '../modals/bill.modal';
@@ -15,9 +17,11 @@ export class TableBillComponent implements OnInit {
 
   billArray: BillType[];
   faCoffee = faSignInAlt;
+  faMedium = faPlus;
   backBillArray: BillType[];
   toggle = false;
-
+  private _isLoggedIn = false;
+  localStorageKey = 'isLoggedIn';
 
   constructor(private _service: DataService, private _router: Router) { }
 
@@ -48,7 +52,6 @@ export class TableBillComponent implements OnInit {
       }
     })
   }
-
   applyBtnFilter(filterType: string = '') {
     console.log(filterType);
     this.billArray = this.backBillArray.filter(e => {
@@ -62,6 +65,12 @@ export class TableBillComponent implements OnInit {
   onClick(logout: any) {
     console.log(event);
     this._router.navigate(['/login'], { queryParams: logout });
+    this._isLoggedIn = false;
+    localStorage.setItem(this.localStorageKey, 'false');
+  }
+  onSelect() {
+    console.log("hello");
+    this._router.navigate(['/addbill']);
   }
 
 }

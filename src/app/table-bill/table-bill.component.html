@@ -19,6 +19,12 @@
       <button class="btn btn-outline-success" (click)="applyBtnFilter('delivered')">Delivered</button>
     </div>
     <div class="col">
+      <button class="btn btn-outline-info" data-toggle="tooltip" data-placement="right" title="Add Inventory"
+        (click)="onSelect()">
+        <fa-icon [icon]="faMedium"></fa-icon>
+      </button>
+    </div>
+    <div class="col">
       <button type="button" class="btn btn-light btn-outline-info pull-right" (click)="onClick(logout)" *ngIf="!toggle">
         Logout <fa-icon [icon]="faCoffee"></fa-icon>
       </button>
@@ -60,11 +66,18 @@
     </tbody>
   </table>
 
+  <!-- <footer class="footer text-center">
+    <div class="row container footer">
+      <div class="col text-center">
+        InvManagement &copy; 2020
+      </div>
+    </div>
+  </footer> -->
 
 </div>
 
 <footer class="footer text-center">
-  <div class="row container footer">
+  <div class="row container">
     <div class="col text-center">
       InvManagement &copy; 2020
     </div>
