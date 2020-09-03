@@ -46,7 +46,7 @@ export class AddBillComponent implements OnInit {
       );
     }
     else {
-      this.error = 'please enter all details';
+      this.error = 'Please Enter All Details';
     }
   }
 }

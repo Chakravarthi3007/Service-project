@@ -5,47 +5,40 @@
  </div>
  <br>
  <div class="alert alert-danger" role="alert" *ngIf="error.length > 0">
-   <h1>{{error}}</h1>
+   <medium>{{error}}</medium>
  </div>
+
  <form (ngSubmit)="onFormSubmit(addBillForm)" #addBillForm="ngForm">
-
-   <div class="row">
-     <div class="col-2">
-       <label for="customerName">Customer Name</label><br>
-       <input type="text" name="customerName" #customerName [ngModel]="bill.customerName" required><br>
-     </div>
-     <div class="col">
-       <label for="phoneNumber">Phone Number</label><br>
-       <input type="number" name="phoneNumber" #phoneNumber [ngModel]="bill.phoneNumber" required><br>
-     </div>
+   <div class="form-group">
+     <label for="customerName">Customer Name</label>
+     <input type="text" name="customerName" class="form-control" #customerName [ngModel]="bill.customerName" required
+       placeholder="Customer Name">
    </div>
-   <br>
-   <div class="row">
-     <div class="col-2">
-       <label for="orderDate">Order Date</label><br>
-       <input type="date" name="orderDate" #orderDate [ngModel]="bill.orderDate" required><br>
-     </div>
-     <div class="col">
-       <label for="deliveryDate">Delivery Date</label><br>
-       <input type="date" name="deliveryDate" #deliveryDate [ngModel]="bill.deliveryDate" required><br>
-     </div>
+   <div class="form-group">
+     <label for="phoneNumber">Phone Number</label>
+     <input type="number" name="phoneNumber" max="3000-12-31" min="1000-01-01" class="form-control" #phoneNumber
+       [ngModel]="bill.phoneNumber" required placeholder="Phone Number" maxlength="10">
    </div>
-   <br>
-
-   <div class="row">
-     <div class="col-2">
-       <label for="status">Status</label><br>
-       <select class="custom-select" name="status" #status ngModel="bill.Status" required><br>
-         <option selected>Select</option>
-         <option value="todo">Todo</option>
-         <option value="started">Started</option>
-         <option value="ready">Ready</option>
-         <option value="delivered">Delivered</option>
-       </select>
-     </div>
+   <div class="form-group">
+     <label for="orderDate">Order Date</label>
+     <input type="date" name="orderDate" max="3000-12-31" min="1000-01-01" class="form-control" #orderDate
+       [ngModel]="bill.orderDate" required placeholder="Order Date">
    </div>
-   <br>
-
+   <div class="form-group">
+     <label for="deliveryDate">Delivery Date</label>
+     <input type="date" name="deliveryDate" class="form-control" #deliveryDate [ngModel]="bill.deliveryDate" required
+       placeholder="Delivery Date">
+   </div>
+   <div class="form-group">
+     <label for="status">Status</label>
+     <select class="form-control" name="status" #status ngModel="bill.Status" required>
+       <option selected>Select</option>
+       <option value="todo">Todo</option>
+       <option value="started">Started</option>
+       <option value="ready">Ready</option>
+       <option value="delivered">Delivered</option>
+     </select>
+   </div>
    <div class="row">
      <div class="col-2">
        <button type="submit" class="btn btn-success">Save</button>
