@@ -2,8 +2,9 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 
-import { UserModel } from '../modals/user.models';
 import { faCoffee, faWarehouse } from '@fortawesome/free-solid-svg-icons';
+
+import { UserModel } from '../modals/user.models';
 import { DataService } from '../Services/data.service';
 import { LoginService } from '../Services/login.service';
 

@@ -3,7 +3,8 @@ import { NgForm } from '@angular/forms';
 
 import { BillType } from '../modals/bill.modal';
 import { DataService } from '../Services/data.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ItemService } from '../Services/item.service';
 
 @Component({
   selector: 'app-add-bill',
@@ -24,10 +25,19 @@ export class AddBillComponent implements OnInit {
   };
 
   // In order to call that service function we need to intationate
-  constructor(private _service: DataService, private _router: Router) { }
+  constructor(private _service: DataService, private _router: Router, private _itemService: ItemService, private _activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
 
+    this._activatedRoute.url.subscribe(
+      (url) => {
+        if (url[0].path === 'editbill') {
+          this._itemService.selectedItem.subscribe(
+            (item) => this.bill = item
+          )
+        }
+      }
+    )
   }
 
   onFormSubmit(addBillForm: NgForm) {
@@ -48,5 +58,9 @@ export class AddBillComponent implements OnInit {
     else {
       this.error = 'Please Enter All Details';
     }
+  }
+  onClick() {
+    console.log(event);
+    this._router.navigate(['/allbill']);
   }
 }

@@ -18,6 +18,8 @@ const routes: Routes = [
       { path: 'more', component: MoreInfoComponent },
       { path: 'allbill', component: TableBillComponent },
       { path: 'addbill', component: AddBillComponent },
+      { path: 'editbill', component: AddBillComponent },
+
     ]
   },
   { path: 'login', component: LoginComponent }

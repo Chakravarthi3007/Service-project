@@ -11,27 +11,27 @@
  <form (ngSubmit)="onFormSubmit(addBillForm)" #addBillForm="ngForm">
    <div class="form-group">
      <label for="customerName">Customer Name</label>
-     <input type="text" name="customerName" class="form-control" #customerName [ngModel]="bill.customerName" required
+     <input type="text" name="customerName" class="form-control" #customerName [(ngModel)]="bill.customerName" required
        placeholder="Customer Name">
    </div>
    <div class="form-group">
      <label for="phoneNumber">Phone Number</label>
      <input type="number" name="phoneNumber" max="3000-12-31" min="1000-01-01" class="form-control" #phoneNumber
-       [ngModel]="bill.phoneNumber" required placeholder="Phone Number" maxlength="10">
+       [(ngModel)]="bill.phoneNumber" required placeholder="Phone Number" maxlength="10">
    </div>
    <div class="form-group">
      <label for="orderDate">Order Date</label>
      <input type="date" name="orderDate" max="3000-12-31" min="1000-01-01" class="form-control" #orderDate
-       [ngModel]="bill.orderDate" required placeholder="Order Date">
+       [ngModel]="bill.orderDate | date:'yyyy-MM-dd'" required placeholder="Order Date">
    </div>
    <div class="form-group">
      <label for="deliveryDate">Delivery Date</label>
-     <input type="date" name="deliveryDate" class="form-control" #deliveryDate [ngModel]="bill.deliveryDate" required
-       placeholder="Delivery Date">
+     <input type="date" name="deliveryDate" class="form-control" #deliveryDate
+       [ngModel]="bill.deliveryDate | date:'yyyy-MM-dd'" required placeholder="Delivery Date">
    </div>
    <div class="form-group">
      <label for="status">Status</label>
-     <select class="form-control" name="status" #status ngModel="bill.Status" required>
+     <select class="form-control" name="status" #status [(ngModel)]="bill.status" required>
        <option selected>Select</option>
        <option value="todo">Todo</option>
        <option value="started">Started</option>
@@ -44,7 +44,7 @@
        <button type="submit" class="btn btn-success">Save</button>
      </div>
      <div class="col">
-       <button type="button" class="btn btn-danger">Cancel</button>
+       <button type="button" class="btn btn-danger" (click)="onClick()">Cancel</button>
      </div>
    </div>
  </form>

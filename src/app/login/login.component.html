@@ -26,8 +26,9 @@
         </div>
         <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
       </form>
-      <h3 *ngIf="isError1" class="alert alert-warning">Please enter your login credentials</h3>
-      <h3 *ngIf="isError2" class="alert alert-warning">User ID & pwd miss match</h3>
+      <br>
+      <medium *ngIf="isError1" class="alert alert-danger">Please Enter your Login Credentials</medium>
+      <medium *ngIf="isError2" class="alert alert-danger">User ID & Pwd Miss Match</medium>
     </div>
   </div>
 

@@ -6,7 +6,10 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 
 import { DataService } from '../Services/data.service';
+import { ItemService } from '../Services/item.service';
 import { BillType } from '../modals/bill.modal';
+
+
 
 @Component({
   selector: 'app-table-bill',
@@ -23,7 +26,7 @@ export class TableBillComponent implements OnInit {
   private _isLoggedIn = false;
   localStorageKey = 'isLoggedIn';
 
-  constructor(private _service: DataService, private _router: Router) { }
+  constructor(private _service: DataService, private _router: Router, private _itemService: ItemService) { }
 
   ngOnInit() {
     this._service.getAllBill().subscribe(
@@ -71,6 +74,11 @@ export class TableBillComponent implements OnInit {
   onSelect() {
     console.log("hello");
     this._router.navigate(['/addbill']);
+  }
+
+  rowClick(item) {
+    this._itemService.emitSelectedItem(item);
+    this._router.navigate(['/editbill']);
   }
 
 }
